@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div class="input-group col-4">
+      {{ form.name(class="form-control rounded col-4", placeholder="Search") }}
+      {{ form.submit(class="btn btn-outline-primary")}}
+  </div>
+</form>
+<div class="card mb-3 mx-auto" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{ poke_dict['img_url']}}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ poke_dict['name'] }}</h5>
+        <p class="card-text">
+          <ul>
+              <li>Ability: {{ poke_dict['ability']}}</li>
+              <li>HP: {{ poke_dict['hp']}}</li>
+              <li>Attack: {{ poke_dict['attack']}}</li>
+              <li>Defense: {{ poke_dict['defense']}}</li>
+          </ul>
+        </p>
+        <p class="card-text"><small class="text-muted">Pokemon Info!</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
